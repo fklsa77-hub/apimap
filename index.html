@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c35">
+  <meta name="description" content="실제 장소를 검색하고 두 지점 사이의 도로 거리와 직선 거리를 확인하세요.">
+  <title>사이 · 두 장소 사이의 거리</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header><a class="brand" href="./"><span class="brand-icon">↗</span> 사이<span class="brand-sub">DISTANCE BETWEEN</span></a><span class="header-note">두 장소를 잇는 가장 쉬운 방법</span></header>
+  <main>
+    <section class="intro"><span class="eyebrow">A LITTLE CLOSER</span><h1>여기서 저기까지,<br>얼마나 멀까요<span>?</span></h1><p>장소를 찾아 연결해 보세요.<br>두 지점 사이의 거리를 간편하게 알려드려요.</p></section>
+    <section class="workspace" aria-label="거리 측정">
+      <div class="search-panel">
+        <div class="panel-heading"><h2>어디로 떠나시나요?</h2><span>01 — 02</span></div>
+        <div id="places"></div>
+        <button class="swap" id="swap" type="button" aria-label="출발지와 도착지 바꾸기">↑↓ <span>출발 · 도착 바꾸기</span></button>
+        <fieldset><legend>측정 방식</legend><label><input type="radio" name="mode" value="driving" checked> 자동차 도로 거리</label><label><input type="radio" name="mode" value="straight"> 직선 거리</label></fieldset>
+        <button class="calculate" id="calculate" type="button" disabled>거리 계산하기 <span>↗</span></button>
+        <p class="hint">검색 결과에서 출발지와 도착지를 선택해 주세요.</p>
+      </div>
+      <div class="result-panel">
+        <div class="map-art" aria-hidden="true"><div class="grid"></div><svg viewBox="0 0 420 270"><path class="river" d="M-20 210 Q100 270 190 135 T460 60"/><path class="road" d="M70 183 L125 183 L125 108 L285 108 L285 66 L340 66"/><circle cx="70" cy="183" r="13"/><circle cx="340" cy="66" r="13"/><text x="70" y="188">A</text><text x="340" y="71">B</text></svg><span class="map-caption">EVERY JOURNEY STARTS SOMEWHERE</span></div>
+        <div class="result-content" aria-live="polite" aria-atomic="true"><span class="eyebrow" id="result-label">YOUR DISTANCE</span><div id="result"><h2>두 장소 사이,<br>새로운 여정의 시작.</h2><p>장소를 선택하면 이곳에 총거리가 표시됩니다.</p></div></div>
+      </div>
+    </section>
+    <p class="status" id="status" role="status"></p>
+    <aside class="notes"><span>↗ 실제 장소 검색</span><span>◎ 도로 · 직선 거리</span><span>↗ OpenStreetMap 연결</span></aside>
+  </main>
+  <footer><span>사이 <small>가까운 곳부터, 더 먼 곳까지.</small></span><p>검색 데이터 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · 경로 OSRM<br><a href="https://operations.osmfoundation.org/policies/nominatim/" target="_blank" rel="noopener noreferrer">Nominatim 이용 정책</a> · 검색어와 선택 좌표는 외부 지도 서비스에 전송됩니다.</p></footer>
+</body>
+</html>
